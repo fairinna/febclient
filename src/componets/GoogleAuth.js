@@ -25,16 +25,24 @@ class GoogleAuth extends React.Component {
   };
   showSignIn = () => {
     if (this.state.authGoogleProperty === null) {
-      return <div>I do not know, who are you!!</div>;
+      return null;
     }
     if (this.state.authGoogleProperty) {
-      return <div>Welcome, you are In!</div>;
+      return (
+        <button className='ui red google button'>
+          <i className='google icon'> Sign OUT</i>
+        </button>
+      );
     } else {
-      return <div>SignedIn is {this.state.authGoogleProperty.toString()}</div>;
+      return (
+        <button className='ui green google button'>
+          <i className='google icon'> SignIN</i>
+        </button>
+      );
     }
   };
   render() {
-    return <div> {this.showSignIn()}</div>;
+    return <div className=''> {this.showSignIn()}</div>;
   }
 }
 export default GoogleAuth;
